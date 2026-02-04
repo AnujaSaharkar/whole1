@@ -6,7 +6,7 @@ const App = () => {
    ]);
 
    function fetchnotes(){
-      axios.get("http://localhost:3000/api/notess")
+      axios.get("https://whole2.onrender.com/api/notess")
       .then(res => {
          // DEBUG
         setnotes(res.data.notes);
@@ -20,7 +20,7 @@ const App = () => {
 
       console.log(title.value,description.value)
 
-      axios.post('http://localhost:3000/api/notess',{title:title.value,description:description.value})
+      axios.post('https://whole2.onrender.com/api/notess',{title:title.value,description:description.value})
       .then((res)=>{
         console.log(res.data)
          fetchnotes()
@@ -31,7 +31,7 @@ const App = () => {
 
 
    function handleDelete(noteid){
-    axios.delete('http://localhost:3000/api/notess/'+noteid)
+    axios.delete('https://whole2.onrender.com/api/notess/'+noteid)
     .then((res=>{
       console.log(res.data)
       fetchnotes()
